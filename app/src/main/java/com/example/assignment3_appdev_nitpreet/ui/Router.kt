@@ -1,13 +1,9 @@
 package com.example.assignment3_appdev_nitpreet.ui
 
+import android.os.Bundle
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.compositionLocalOf
-import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.example.assignment3_appdev_nitpreet.CartItems
 import com.example.assignment3_appdev_nitpreet.LocalNavController
 import com.example.assignment3_appdev_nitpreet.model.Food
 import com.example.assignment3_appdev_nitpreet.ui.pages.Confirmation.Confirmation
@@ -24,8 +20,8 @@ sealed class Routes(val route:String){
 
     object Cart : Routes("Cart")
 
-    object Confirmation : Routes("Confirmation/{food}"){
-        fun go(food: Food) = "Confirmation/$food"
+    object Confirmation : Routes("Confirmation/{index}"){
+        fun go(index: Int) = "Confirmation/$index"
     }
 }
 
@@ -39,7 +35,7 @@ fun Routes() {
             composable(Routes.Main.route){ Home() }
             composable(Routes.About.route){ AboutUs()}
             composable(Routes.Cart.route){ Cart() }
-            composable(Routes.Confirmation.route){ Confirmation()}
+            composable(Routes.Confirmation.route){ Confirmation(int = it.arguments?.getInt("index"))}
         }
 
 

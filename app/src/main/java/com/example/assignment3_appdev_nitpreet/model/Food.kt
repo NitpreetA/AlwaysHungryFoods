@@ -3,6 +3,7 @@ package com.example.assignment3_appdev_nitpreet.model
 
 import android.os.Parcel
 import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import com.example.assignment3_appdev_nitpreet.R
 
 /*
@@ -35,6 +36,7 @@ Very simple backend, issue with parcelable at first.
  */
 
 //Backend data
+@Parcelize
 data class Food(
     val id: Int,
     val foodName: String?,
@@ -43,35 +45,7 @@ data class Food(
     val description: String?
     //Inherits from parcelable so the info can be saved when rotated
 ):Parcelable {
-    constructor(parcel: Parcel) : this(
-        parcel.readInt(),
-        parcel.readString(),
-        parcel.readInt(),
-        parcel.readDouble(),
-        parcel.readString()
-    ) {
-    }
 
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(id)
-        parcel.writeString(foodName)
-        parcel.writeInt(image)
-        parcel.writeDouble(price)
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<Food> {
-        override fun createFromParcel(parcel: Parcel): Food {
-            return Food(parcel)
-        }
-
-        override fun newArray(size: Int): Array<Food?> {
-            return arrayOfNulls(size)
-        }
-    }
 }
 
 //List of all food items available. Image is grabbed from the drawable

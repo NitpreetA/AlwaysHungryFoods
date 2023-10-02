@@ -103,7 +103,7 @@ fun FoodCard(
                 Button(
                      onClick = {
                         cartItems.add(food)
-                         navController.navigate(Routes.Confirmation.go(food))
+                         navController.navigate(Routes.Confirmation.go(cartItems.size -1))
                     },
                     modifier = Modifier.align(Alignment.CenterVertically),
                     enabled = true
