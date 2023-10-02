@@ -28,6 +28,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import com.example.assignment3_appdev_nitpreet.CartItems
+import com.example.assignment3_appdev_nitpreet.LocalNavController
+import com.example.assignment3_appdev_nitpreet.ui.Routes
 
 
 import java.text.NumberFormat
@@ -53,6 +55,7 @@ Items is the shoping cart when add to cart in clicked food is added to list
 fun FoodCard(
     food: Food,
 ) {
+    val navController = LocalNavController.current
     var cartItems = CartItems.current
     Card(
         modifier = Modifier
@@ -100,6 +103,7 @@ fun FoodCard(
                 Button(
                      onClick = {
                         cartItems.add(food)
+                         navController.navigate(Routes.Confirmation.go(food))
                     },
                     modifier = Modifier.align(Alignment.CenterVertically),
                     enabled = true
