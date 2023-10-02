@@ -16,16 +16,17 @@ Had issues with the scaffold and tried searching up solutions all turned to dead
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HungrysScaffold(
+fun MainLayout(
     modifier: Modifier = Modifier,
     topBar: @Composable (() -> Unit) = {},
     bottomBar: @Composable (() -> Unit) = {},
     content: @Composable () -> Unit
 
 ){
-    Scaffold(modifier = modifier,
-        topBar = topBar,
-        bottomBar = bottomBar,
+    Scaffold(
+        modifier = modifier,
+        topBar = {TopBar()},
+        bottomBar = { Bottom() },
 
         ){
         //ensures the content is not hidden under the top nav bar

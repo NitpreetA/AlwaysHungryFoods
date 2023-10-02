@@ -18,14 +18,13 @@ This subtask was simple took 8 minutes
 @Composable
 fun Items(
     foodItems: List<Food>,
-    items: MutableList<Food>
 ){
     Box{
         LazyRow{
             //Goes over the sublist of the category and displays all the food in the FoodCard format
             itemsIndexed(foodItems){index, item ->
 
-                FoodCard(food = item,items)
+                FoodCard(food = item)
             }
         }
     }

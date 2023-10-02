@@ -27,6 +27,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
+import com.example.assignment3_appdev_nitpreet.CartItems
 
 
 import java.text.NumberFormat
@@ -51,8 +52,8 @@ Items is the shoping cart when add to cart in clicked food is added to list
 @Composable
 fun FoodCard(
     food: Food,
-    items: MutableList<Food>
 ) {
+    var cartItems = CartItems.current
     Card(
         modifier = Modifier
             .size(300.dp)
@@ -97,8 +98,8 @@ fun FoodCard(
                 )
                 // Add to Cart Button
                 Button(
-                    onClick = {
-                        items.add(food)
+                     onClick = {
+                        cartItems.add(food)
                     },
                     modifier = Modifier.align(Alignment.CenterVertically),
                     enabled = true
