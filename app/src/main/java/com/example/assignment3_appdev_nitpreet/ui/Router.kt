@@ -35,7 +35,8 @@ fun Routes() {
             composable(Routes.Main.route){ Home() }
             composable(Routes.About.route){ AboutUs()}
             composable(Routes.Cart.route){ Cart() }
-            composable(Routes.Confirmation.route){ Confirmation(int = it.arguments?.getInt("index"))}
+            composable(Routes.Confirmation.route){ Confirmation(int = it.arguments?.getString("index")
+                ?.toInt())}
         }
 
 
