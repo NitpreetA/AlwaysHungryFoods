@@ -23,7 +23,7 @@ enum class CollectionType { Normal, Highlight }
 //Different types of categories which have different parts of the list
 private val MainMeal = FoodCategories(
     id = 1,
-    name = "Hungry's's ",
+    name = "Hungrys' ",
     type = CollectionType.Highlight,
     foods = foods.subList(0, 6)
 )

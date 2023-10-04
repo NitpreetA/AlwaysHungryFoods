@@ -84,10 +84,8 @@ val foods = listOf(
         foodName = "Lamb Chops (3pcs)",
         image =  R.drawable.lamb,
         price = 29.00,
-        description = "Australian rack of lamb marinated in garlic, honey dijon, rosemary and Gujarati spices\n" +
-                "\n" +
-                "accompanied by\n" +
-                "\n" +
+        description = "Australian rack of lamb marinated in garlic, honey dijon, rosemary and Gujarati spices " +
+                "accompanied by " +
                 "Baby garlic potatoes and garlic sauce or Mashed potatoes"
     ),
 
@@ -96,10 +94,8 @@ val foods = listOf(
         foodName = "Lobster and Shrimp Pasta",
         image =  R.drawable.pasta,
         price = 33.00,
-        description = "Lobster and Shrimp pasta\n" +
-                "\n" +
-                "Spaghetti, Lobster & Tiger Shrimp\n" +
-                "\n" +
+        description = "Lobster and Shrimp pasta. " +
+                "Spaghetti, Lobster & Tiger Shrimp " +
                 "in a signature house sauce"
     ),
     Food(
@@ -107,8 +103,7 @@ val foods = listOf(
         foodName = "Seafood Boil Bag",
         image =  R.drawable.boil,
         price = 72.00,
-        description = "Lobster tail & claw, snow crab, tiger shrimps\n" +
-                "\n" +
+        description = "Lobster tail & claw, snow crab, tiger shrimps " +
                 "baby potatoes and sweet yellow corn all simmered  in our cajun sauce with a portion rice and peas."
     ),
     Food(
