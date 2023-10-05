@@ -42,11 +42,15 @@ data class Food(
     val foodName: String?,
     val image: Int,
     val price: Double,
-    val description: String?
+    val description: String?,
+    var specialIntr: String
     //Inherits from parcelable so the info can be saved when rotated
 ):Parcelable {
 
 }
+
+
+
 
 //List of all food items available. Image is grabbed from the drawable
 val foods = listOf(
@@ -55,7 +59,8 @@ val foods = listOf(
         foodName = "Shrimps 5pcs",
         image =  R.drawable.shrimp,
         price = 18.00,
-        description = "5 pieces of shrimp with with caramelized lemon and garlic butter."
+        description = "5 pieces of shrimp with with caramelized lemon and garlic butter.",
+        specialIntr = ""
 
     ),
     Food(
@@ -63,21 +68,24 @@ val foods = listOf(
         foodName = "BBQ Island Chicken",
         image =  R.drawable.bbq,
         price = 18.00,
-        description = "Grilled and chopped chicken thigh smothered in bbq island sauce served with sautéed mushrooms and choice of sweet potato purée or rice n peas topped with scallions."
+        description = "Grilled and chopped chicken thigh smothered in bbq island sauce served with sautéed mushrooms and choice of sweet potato purée or rice n peas topped with scallions.",
+        specialIntr = ""
     ),
     Food(
         id = 3,
         foodName = "Gourmet Mac n Cheese",
         image =  R.drawable.mac,
         price = 16.00,
-        description = "Delicious creamy Mac n Cheese with chives and three different types of cheese."
+        description = "Delicious creamy Mac n Cheese with chives and three different types of cheese.",
+        specialIntr = ""
     ),
     Food(
         id = 4,
         foodName = "Colonialised Shepherd’s Pie",
         image =  R.drawable.pie,
         price = 22.00,
-        description = "British dish with a brown twist"
+        description = "British dish with a brown twist",
+        specialIntr = ""
     ),
     Food(
         id = 5,
@@ -86,7 +94,8 @@ val foods = listOf(
         price = 29.00,
         description = "Australian rack of lamb marinated in garlic, honey dijon, rosemary and Gujarati spices " +
                 "accompanied by " +
-                "Baby garlic potatoes and garlic sauce or Mashed potatoes"
+                "Baby garlic potatoes and garlic sauce or Mashed potatoes",
+        specialIntr = ""
     ),
 
     Food(
@@ -96,7 +105,8 @@ val foods = listOf(
         price = 33.00,
         description = "Lobster and Shrimp pasta. " +
                 "Spaghetti, Lobster & Tiger Shrimp " +
-                "in a signature house sauce"
+                "in a signature house sauce",
+        specialIntr = ""
     ),
     Food(
         id = 7,
@@ -104,14 +114,16 @@ val foods = listOf(
         image =  R.drawable.boil,
         price = 72.00,
         description = "Lobster tail & claw, snow crab, tiger shrimps " +
-                "baby potatoes and sweet yellow corn all simmered  in our cajun sauce with a portion rice and peas."
+                "baby potatoes and sweet yellow corn all simmered  in our cajun sauce with a portion rice and peas.",
+        specialIntr = ""
     ),
     Food(
         id = 8,
         foodName = "Tomahawk AAA",
         image =  R.drawable.tomohawk,
         price = 93.00,
-        description = "AAA Tomahawk Platter\nCan feed 2-4 people"
+        description = "AAA Tomahawk Platter\nCan feed 2-4 people",
+        specialIntr = ""
     ),
 
     Food(
@@ -120,7 +132,8 @@ val foods = listOf(
         image =  R.drawable.chopsplate,
         price = 69.00,
         description = "Australian rack of lamb marinated in garlic, honey dijon, rosemary and Gujarati" +
-                " spices\nServed with 8pcs"
+                " spices\nServed with 8pcs",
+        specialIntr = ""
     ),
     Food(
         id = 10,
@@ -128,14 +141,16 @@ val foods = listOf(
         image =  R.drawable.chickenplate,
         price = 68.00,
         description = "Grilled and chopped chicken thigh smothered in bbq island sauce topped with scallions" +
-                "\nSevered in one tray"
+                "\nSevered in one tray",
+        specialIntr = ""
     ),
     Food(
         id = 11,
         foodName = "Shrimp Platter",
         image =  R.drawable.shrimpplate,
         price = 65.00,
-        description = "15 pieces of shrimp with with caramelized lemon and garlic butter."
+        description = "15 pieces of shrimp with with caramelized lemon and garlic butter.",
+        specialIntr = ""
     ),
 
 

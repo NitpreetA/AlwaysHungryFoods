@@ -52,28 +52,7 @@ fun Home(modifier: Modifier = Modifier)
     val foodsCollections = remember {
         FoodRepo.getFoodCat()
     }
-    val  text = remember {
-        mutableStateOf(TextFieldValue())
-    }
-    AppTheme(useDarkTheme = false) {
-        Dialog(onDismissRequest = { /*TODO*/ }) {
-
-            Card(
-                modifier = Modifier
-                    .size(300.dp)
-                    .padding(16.dp),) {
-                Column {
-                    Text(text = "Input your name")
-                    TextField(value = text.value, onValueChange = {text.value = it})
-                }
-            }
-
-
-
-        }
-    }
-
-
+    val cartItems = CartItems.current
 
         Box(modifier){
             LazyColumn{

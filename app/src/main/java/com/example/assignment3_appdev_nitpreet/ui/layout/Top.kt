@@ -52,7 +52,7 @@ fun TopBar(modifier: Modifier = Modifier)
 
                 items.forEachIndexed{index, food ->
                     DropdownMenuItem(
-                        text = { Text(" ${index + 1}. ${food.foodName} ${NumberFormat.getCurrencyInstance().format(food.price)} ", color = Color(0xFFE8E2D9)) },
+                        text = { Text(" ${index + 1}. ${food.foodItem.foodName} ${NumberFormat.getCurrencyInstance().format(food.foodItem.price)} ", color = Color(0xFFE8E2D9)) },
                         onClick = { },
                         enabled = false
                     )

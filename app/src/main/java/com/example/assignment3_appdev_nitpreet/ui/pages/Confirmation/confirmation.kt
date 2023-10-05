@@ -2,6 +2,7 @@ package com.example.assignment3_appdev_nitpreet.ui.pages.Confirmation
 
 import android.icu.text.AlphabeticIndex
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -27,8 +28,10 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import com.example.assignment3_appdev_nitpreet.CartItems
+import com.example.assignment3_appdev_nitpreet.LocalNavController
 import com.example.assignment3_appdev_nitpreet.model.Food
 import com.example.assignment3_appdev_nitpreet.R
+import com.example.assignment3_appdev_nitpreet.ui.Routes
 import com.example.assignment3_appdev_nitpreet.ui.components.FoodDivider
 import java.text.NumberFormat
 
@@ -36,10 +39,11 @@ import java.text.NumberFormat
 @Composable
 fun Confirmation(int: Int?, modifier: Modifier = Modifier){
     val cartItems = CartItems.current
+    val navController = LocalNavController.current
     Column(modifier = Modifier
         .fillMaxSize()
         .padding(10.dp)) {
-        Text(text = "You have added ${cartItems[int!!].foodName}",
+        Text(text = "You have added ${cartItems[int!!].foodItem.foodName}",
             fontSize = 6.em,
             fontFamily = FontFamily.Cursive,
             color = Color(0xFFE9C400)
@@ -51,41 +55,42 @@ fun Confirmation(int: Int?, modifier: Modifier = Modifier){
             .height(150.dp)
             .fillMaxWidth(),
             contentAlignment = Alignment.Center) {
-            Image(painter = painterResource(id = cartItems[int!!].image), contentDescription = "Picture of food", alignment = Alignment.Center)
+            Image(painter = painterResource(id = cartItems[int!!].foodItem.image), contentDescription = "Picture of food", alignment = Alignment.Center)
         }
 
         Spacer(modifier = Modifier.height(15.dp))
         Column {
             Text(text = "Description:", style = TextStyle(textDecoration = TextDecoration.Underline), fontSize = 4.em,)
-            Text(text = "${cartItems[int!!].description}")
+            Text(text = "${cartItems[int!!].foodItem.description}")
+
+        }
+
+        Spacer(modifier = Modifier.height(15.dp))
+        Column {
+            Text(text = "Special Intructions:", style = TextStyle(textDecoration = TextDecoration.Underline), fontSize = 4.em,)
+
+            if(TextUtils.isEmpty(cartItems[int!!].msg)){
+            Text(text = "No special intructions were added.")
+            }
+            else
+            {
+                Text(text = "${cartItems[int!!].msg}")
+            }
 
         }
 
         Spacer(modifier = Modifier.height(100.dp))
         Row {
-            Text(text = "Price: ${NumberFormat.getCurrencyInstance().format(cartItems[int!!].price)}",
+            Text(text = "Price: ${NumberFormat.getCurrencyInstance().format(cartItems[int!!].foodItem.price)}",
                 textDecoration = TextDecoration.Underline)
             Spacer(modifier = Modifier.width(20.dp))
 
         }
         Row {
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = { navController.navigate(Routes.Main.route) }) {
                 Text(text = "Continue")
             }
-            Button(onClick = { /*TODO*/ }) {
-                Text(text = "Remove from cart")
-            }
+
         }
     }
-
-
-
-
-
-
-
-
-
-
-
 }

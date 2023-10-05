@@ -9,6 +9,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.assignment3_appdev_nitpreet.model.CartItem
 import com.example.assignment3_appdev_nitpreet.model.Food
 
 import com.example.assignment3_appdev_nitpreet.ui.Routes
@@ -18,12 +19,12 @@ import com.example.compose.AppTheme
 
 
 val LocalNavController = compositionLocalOf<NavHostController>{ error("No Nav Controller")}
-val CartItems = compositionLocalOf<MutableList<Food>>{ error("No cart items found")}
+val CartItems = compositionLocalOf<SnapshotStateList<CartItem>>{ error("No cart items found")}
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            var cartItems = rememberMutableStateListOf<Food>()
+            var cartItems = SnapshotStateList<CartItem>()
             AppTheme(useDarkTheme = true) {
                 val navController = rememberNavController()
                 CompositionLocalProvider(LocalNavController provides navController,CartItems provides cartItems){
