@@ -11,11 +11,23 @@ This app is not fully complete.
 3. Run the application
 
 ## Screenshots
-![Home](https://github.com/NitpreetA/AlwaysHungryFoods/assets/98350822/a53a87c4-4348-4779-a2b3-c6f8254e52e1)
 
-![FoodDetails](https://github.com/NitpreetA/AlwaysHungryFoods/assets/98350822/75da7179-c693-4189-aa18-28fa8c0c21f2)
+- Home
+  
+![Home](https://github.com/NitpreetA/AlwaysHungryFoods/assets/98350822/34dfa7cd-4d5f-4ce5-a460-dab877837333)
 
-![Cart](https://github.com/NitpreetA/AlwaysHungryFoods/assets/98350822/973a7a3b-d752-454c-8eed-aa6813fb0e51)
+- Food Details
+
+  
+![FoodDetails](https://github.com/NitpreetA/AlwaysHungryFoods/assets/98350822/7189df9d-a3ff-4bc4-aeb4-810412738b4c)
+
+- Cart
+
+  
+
+![Cart](https://github.com/NitpreetA/AlwaysHungryFoods/assets/98350822/e69db1b8-3e06-40df-85aa-a143a871bb78)
+
+
 
 ## Author
 Nitpreet Arneja
